@@ -1,0 +1,20 @@
+#%RAML 1.0 Trait
+
+headers:
+          x-channel:
+          description: Channel is used to identify the transaction whether it is received from a mobile or web application.
+          enum:
+            - mobile
+            - web
+          required: true
+          type: string
+          x-origin-language:
+            description: Origin Language is used to specify the language used by the user.
+            required: true
+            type: string
+            example: "english"
+          x-origin-market:
+            description: The origin market is used to identify the country from which the transaction is initiated.
+            required: true
+            type: string
+            example: "IND"

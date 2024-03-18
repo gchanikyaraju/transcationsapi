@@ -1,0 +1,70 @@
+#%RAML 1.0
+title: transcation_sapi
+version: 1.0.0
+protocols: [http]
+description: This endpoint will receive the request from upstream APIs and create a  transaction in the SFDC CRM system.
+
+traits:
+  transactionId: !include .. /exchange_modules/58c44229-99fd-4135-819f-ef9d4ebb0764/common-banking-fragment/1.0.0/traits/transaction-id.raml 
+  businessTraits: !include /exchange_modules/58c44229-99fd-4135-819f-ef9d4ebb0764/common-banking-fragment/1.0.5/traits/business-trait.raml 
+  clientId: !include /exchange_modules/58c44229-99fd-4135-819f-ef9d4ebb0764/common-banking-fragment/1.0.5/traits/client-id-secret-traits.raml
+
+types:
+  postrequesttranscation: !include /datatypes/request/post-request-transaction-datatype.raml 
+  postresponsetranscatoin: !include /datatypes/response/post-response-transaction-dataType.raml 
+  errorResponseDataType: !include /exchange_modules/58c44229-99fd-4135-819f-ef9d4ebb0764/common-banking-fragment/1.0.0/dataTypes/error-response-data-Type.raml 
+
+/members:
+  /transactions:
+    post:
+      is:
+        - businessTraits
+        - clientId
+        - transactionId
+      body:
+        application/json:
+          type: postrequesttranscation 
+          example: !include /examples/request/Post-request-response-example.json 
+      responses:
+        201:
+          body:
+            application/json:
+              type: postresponsetranscatoin 
+              example: !include /examples/response/201-sucess-response-example.json 
+        400:
+          body:
+            application/json:
+              type: errorResponseDataType
+              example: !include /examples/errorResponses/400-error-response-examplejson 
+        401:
+          body:
+            application/json:
+              type: errorResponseDataType
+              example: !include /examples/errorResponses/401-error-response.json 
+        404:
+          body:
+            application/json:
+              type: errorResponseDataType
+              example: !include /examples/errorResponses/404-error-response-exapmle.json 
+        500:
+          body:
+            application/json:
+              type: errorResponseDataType
+              example: !include /examples/errorResponses/500-error-response-example.json 
+                        
+                        
+                
+
+                
+                    
+                        
+                        
+                
+                    
+
+
+
+                        
+                        
+                    
+                    

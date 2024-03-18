@@ -1,0 +1,10 @@
+                {
+                  "message": "operation failed",
+                  "statusCode": 401,
+                  "success": false,
+                  "eventId": "abcdefgh-jxbv8599-sjdf76432-3746bbdd",
+                  "error": {
+                    "type": "UNAUTHORIZED",
+                    "details": "The client is not authorized to use the requested resource"
+                  }
+                }

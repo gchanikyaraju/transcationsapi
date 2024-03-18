@@ -1,0 +1,38 @@
+#%RAML 1.0 DataType
+              type: object
+              properties:
+                message:
+                  description: This field is used to specify the error message for a specific transaction.
+                  required: true
+                  type: string
+                  example: "operation failed"
+                statusCode:
+                  description: This field is used to specify the error status code for a specific failed transaction.
+                  required: true
+                  type: integer
+                  example: 400
+                success:
+                  description: This field specifies the failed status of a transaction.
+                  required: true
+                  type: boolean
+                  example: false
+                eventId:
+                  description: This field will specify the transaction ID we received as part of the request headers. This helps track the transaction easily
+                  required: true
+                  type: string
+                  example: "abcdefgh-jxbv8599-sjdf76432-3746bbdd"
+                error:
+                  description: This error object contains the error type and details of the error raised for a specific transaction.
+                  required: true
+                  type: object
+                  properties:
+                    type:
+                      description: This field will specify the type of error raised for a specific transaction.
+                      required: true
+                      type: string
+                      example: "BAD_REQUEST"
+                    details:
+                      description: This field will specify the details of error raised for a specific transaction.
+                      required: true
+                      type: string
+                      example: " received invalid data, the amount should be an integer"

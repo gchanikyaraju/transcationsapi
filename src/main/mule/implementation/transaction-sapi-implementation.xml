@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd">
+	<salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="7da78780-beee-4abc-be85-6c550251e667" >
+		<salesforce:basic-connection username="chanikyaraju447-kuvn@force.com" password="Chanikya@31" securityToken="vtQLl6gzvGvGBWb7zayfvnrei" />
+	</salesforce:sfdc-config>
+	<flow name="post-members-transactions-implementation" doc:id="c61fa7b4-5f39-4b76-9dfd-2b18cc4a3a7c" >
+		<salesforce:create doc:name="Create" doc:id="4801cc7b-96b5-41b0-965e-9601e7c725e3" config-ref="Salesforce_Config"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+  message: "transaction created successfully",
+  statusCode: 201,
+  txnSuccess: true,
+  eventId: " abcdefgh-jxbv8599-sjdf76432-3746bbdd ",
+  data: {
+    memberId: "Mdsah8734873",
+    txnStatus: "Success"
+  }
+}]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+	</flow>
+</mule>

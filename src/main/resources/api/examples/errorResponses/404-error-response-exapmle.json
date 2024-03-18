@@ -1,0 +1,10 @@
+                    {
+                      "message": "operation failed",
+                      "statusCode": 404,
+                      "success": false,
+                      "eventId": "abcdefgh-jxbv8599-sjdf76432-3746bbdd",
+                      "error": {
+                        "type": "RESOURCE_NOT_FOUND",
+                        "details": " requested resource is invalid or does not exist"
+                      }
+                    }

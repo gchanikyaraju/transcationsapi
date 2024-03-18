@@ -1,0 +1,38 @@
+#%RAML 1.0 DataType
+              type: object
+              properties:
+                message:
+                  description: This field is used to specify the message for a specific transaction.
+                  required: true
+                  type: string
+                  example: "transaction created successfully"
+                statusCode:
+                  description: This field is used to specify the status code for a specific transaction.
+                  required: true
+                  type: integer
+                  example: 201
+                txnSuccess:
+                  description: This field will specify whether the transaction is successful or not.
+                  required: true
+                  type: boolean
+                  example: true
+                eventId:
+                  description: This field will specify the transaction ID we received as part of the request headers. This helps track the transaction easily.
+                  required: true
+                  type: string
+                  example: "abcdefgh-jxbv8599-sjdf76432-3746bbdb"
+                data:
+                  description: This object contains the Member ID and Transaction Status of a specific transaction.
+                  required: true
+                  type: object
+                  properties:
+                    memberId:
+                      description: The Member ID field is used to identify the member who initiates the transaction.
+                      required: true
+                      type: string
+                      example: "Mem34576345"
+                    txnStatus:
+                      description: The Transaction Status field is used to specify the status of a transaction initiated by the member.
+                      required: true
+                      type: string
+                      example: "Mem34576345"

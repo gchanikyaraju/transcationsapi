@@ -1,0 +1,33 @@
+#%RAML 1.0 DataType
+          type: object
+          properties:
+            memberId:
+             description: The Member ID field is used to identify the member who initiates the transaction.
+             required: true
+             type: string
+             example: "Mem34576345"
+            txnId:
+             description: The Transaction ID field is used to identify the transaction initiated by the member.
+             required: true
+             type: string
+             example: "TXN72y483"
+            amount:
+             description: The Amount field is used to specify the amount spent on a specific transaction.
+             required: true
+             type: integer
+             example: 10000
+            memberTier:
+             description: This field is used to identify the category of member he/she falls into. Based on this category, the member will get reward points for the amount spent
+             required: true
+             type: string
+             enum:
+               - T1
+               - T2
+               - T3
+               - T4
+             example: "T1"
+            txnDate:
+              description: This field is used to identify the date of a transaction initiated by a member.
+              required: true
+              type: string
+              example: "04-04-2021"

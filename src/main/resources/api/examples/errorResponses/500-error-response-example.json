@@ -1,0 +1,10 @@
+                    {
+                      "message": "operation failed",
+                      "statusCode": 500,
+                      "success": false,
+                      "eventId": "abcdefgh-jxbv8599-sjdf76432-3746bbdd",
+                      "error": {
+                        "type": "INTERNAL_SERVER_ERROR",
+                        "details": "The server encountered an unexpected condition that prevented it from processing the request"
+                      }
+                    }

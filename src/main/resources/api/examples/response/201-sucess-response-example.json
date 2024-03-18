@@ -1,0 +1,10 @@
+{
+  "message": "transaction created successfully",
+  "statusCode": 201,
+  "txnSuccess": true,
+  "eventId": " abcdefgh-jxbv8599-sjdf76432-3746bbdd ",
+  "data": {
+    "memberId": "Mdsah8734873",
+    "txnStatus": "Success"
+  }
+}

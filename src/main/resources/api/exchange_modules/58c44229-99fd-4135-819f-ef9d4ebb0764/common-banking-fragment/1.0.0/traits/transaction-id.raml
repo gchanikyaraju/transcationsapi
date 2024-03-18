@@ -1,0 +1,9 @@
+#%RAML 1.0 Trait
+      headers:
+        x-transaction-id:
+          description: Transaction ID is used for logging and tracking purposes of a transaction in all layers.
+          required: true
+          type: string
+          minLength: 32
+          maxLength: 32
+          example: "abcdefgh-jxbv859-sjd76432-3746bb"

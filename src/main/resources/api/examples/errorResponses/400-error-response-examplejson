@@ -1,0 +1,9 @@
+                {
+ "message": "operation failed",
+  "statusCode": 400,
+   "success": false,
+   "eventId": "abcdefgh-jxbv8599-sjdf76432-3746bbdd", 
+   "error": {
+ "type": "BAD_REQUEST", "details": "received invalid data, the amount should be an integer"
+ }
+}
